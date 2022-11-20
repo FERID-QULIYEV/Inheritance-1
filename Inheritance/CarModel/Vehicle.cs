@@ -15,11 +15,17 @@ namespace Inheritance.CarModel
         {
             Console.WriteLine("Masinin rengini daxil edin");
             string Color = Console.ReadLine();
+            while(Color != "Black");
+            {
+                Console.WriteLine("Reng sehvdir");
+                Color = Console.ReadLine();
+            }
             Console.WriteLine("Masinin ilini daxil edin");
             int Year = Convert.ToInt32(Console.ReadLine());
-            if (Year!=2022)
+            while (Year<=2022 && Year>=1900)
             {
                 Console.WriteLine("Ili sehv daxi etmisiniz");
+                Year = Convert.ToInt32(Console.ReadLine());
             }
             return ($"{Color} {Year}");
         }

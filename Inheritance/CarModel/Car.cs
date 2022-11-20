@@ -18,22 +18,38 @@ namespace Inheritance.CarModel
         byte KmUcunYanacaq = 0;
         public string ShowInfo()
         {
-            Console.WriteLine("Markasini qeyd edin");
+            Console.WriteLine("Masinin markasini qeyd edin");
             string Brand = Console.ReadLine();
+            while (Brand != "Land Rover")
+            {
+                Console.WriteLine("Sehvdir yeniden yazin");
+                Brand = Console.ReadLine();
+            }
             Console.WriteLine("Modelini qeyd edin");
             string Model = Console.ReadLine();
+            while (Model != "Range Rover")
+            {
+                Console.WriteLine("Sehvdir yeniden yazin");
+                Model = Console.ReadLine();
+            }
             Console.WriteLine("Yanacaq tutumunu qeyd edin");
             byte FuelCapacity = Convert.ToByte(Console.ReadLine());
+            while (FuelCapacity != 80)
+            {
+                Console.WriteLine("Shvdir yeniden yazin");
+                FuelCapacity = Convert.ToByte(Console.ReadLine());
+            }
             Console.WriteLine("1km ucun ne qeder yanacaq yadirdigini qeyd edin");
             byte FuelFor1Km = Convert.ToByte(Console.ReadLine());
+            while (FuelCapacity > 0 && FuelCapacity<=2)
+            {
+                Console.WriteLine("sehvdir yeniden yazin");
+                FuelFor1Km = Convert.ToByte(Console.ReadLine());
+            }
             Console.WriteLine("Yanacagin qiymetini qeyd edin");
             byte CurrentFuel = Convert.ToByte(Console.ReadLine());
             GedeBileceyiyol_max = FuelCapacity / FuelFor1Km;
             KmUcunYanacaq = FuelFor1Km;
-            if(Brand!= "Land Rover" && Model != "Range Rover" && FuelCapacity != 80 && FuelFor1Km != 1 && CurrentFuel != 2)
-            {
-                Console.WriteLine("Melimatlardan biri sehvdir");
-            }
             return ($"{Brand} - {Model} - {FuelCapacity} litr -{FuelFor1Km} litr -{CurrentFuel} Manat");
         }
         
